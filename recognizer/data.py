@@ -7,7 +7,7 @@ from .symbol import Symbol
 
 def get_alphabet() -> list[Symbol]:
     res = []
-    for img_name in glob.glob("static/data/*.png"):
+    for img_name in glob.glob("recognizer/data/*.png"):
         s = Symbol()
         img = cv.imread(img_name, cv.IMREAD_GRAYSCALE)
         ret2, th2 = cv.threshold(img, 0, 255, cv.THRESH_BINARY_INV + cv.THRESH_OTSU)
