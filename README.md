@@ -1,0 +1,2 @@
+# SymRecognizer
+Symbol Recognition library 
