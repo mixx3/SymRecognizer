@@ -12,7 +12,9 @@ class Correlation(RecognitionMethod):
         for sym in splitted:
             max_val = 0
             for et in alphabet.symbols:
-                cur_val = np.linalg.norm(Correlation.check_correlation(sym.vector, et.vector))
+                cur_val = np.linalg.norm(
+                    Correlation.check_correlation(sym.vector, et.vector)
+                )
                 if cur_val > max_val:
                     max_val = cur_val
                     sym.sym_mapper = et.sym_mapper
@@ -25,5 +27,9 @@ class Correlation(RecognitionMethod):
         img = img / np.linalg.norm(img)
         eth = eth / np.linalg.norm(eth)
         if np.linalg.norm(img) * np.linalg.norm(eth) != 0:
-            return np.dot(img.flatten(), eth.flatten()) / np.linalg.norm(img) * np.linalg.norm(eth)
+            return (
+                np.dot(img.flatten(), eth.flatten())
+                / np.linalg.norm(img)
+                * np.linalg.norm(eth)
+            )
         return 0

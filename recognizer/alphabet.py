@@ -21,7 +21,9 @@ class CustomAlphabet(Alphabet):
     def from_repository(cls, path):
         for img_name in glob.glob(f"{path}/*.png"):
             s = Symbol()
-            s.vector = NativeSplitter.split_into_symbols(cv.imread(img_name, cv.IMREAD_GRAYSCALE))[0].vector
+            s.vector = NativeSplitter.split_into_symbols(
+                cv.imread(img_name, cv.IMREAD_GRAYSCALE)
+            )[0].vector
             s.sym_mapper = img_name.split("/")[-1].replace(".png", "").replace("_", "")
             cls.symbols.append(s)
         return cls

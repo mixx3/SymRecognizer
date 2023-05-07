@@ -7,7 +7,6 @@ import cv2 as cv
 
 
 class Morphology(RecognitionMethod):
-
     @staticmethod
     def recognize(img: np.ndarray, alphabet: Alphabet, splitter: Splitter) -> str:
         splitted: list[Symbol] = splitter.split_into_symbols(img)
@@ -36,5 +35,7 @@ class Morphology(RecognitionMethod):
         eth = eth / np.linalg.norm(eth)
         c = np.ones_like(img)
         if np.linalg.norm(img - c) != 0:
-            return np.linalg.norm(img - Morphology.project(eth, img)) / np.linalg.norm(img - c)
+            return np.linalg.norm(img - Morphology.project(eth, img)) / np.linalg.norm(
+                img - c
+            )
         return 1

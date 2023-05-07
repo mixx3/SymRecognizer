@@ -5,9 +5,7 @@ from recognizer.split import Splitter
 
 
 class RecognitionMethod(ABC):
-
     @staticmethod
     @abstractmethod
     def recognize(img: np.ndarray, alphabet: Alphabet, splitter: Splitter) -> str:
         raise NotImplementedError
-

@@ -15,7 +15,7 @@ def get_alphabet() -> list[Symbol]:
         thresh = cv.morphologyEx(th2, cv.MORPH_CLOSE, kernel)
         contours, _ = cv.findContours(thresh, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_NONE)
         x, y, w, h = cv.boundingRect(contours[0])
-        img_c = thresh[y:y + h, x:x + w].copy()
+        img_c = thresh[y : y + h, x : x + w].copy()
         mn = img_c.mean()
         fmin = img_c < mn
         fmax = img_c >= mn
