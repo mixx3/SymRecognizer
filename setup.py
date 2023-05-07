@@ -3,7 +3,7 @@ from distutils.core import setup
 
 setup(
     name="sym-recognizer",
-    version="0.0.4",
+    version="0.0.6",
     description="Python Symbol recognition library",
     author="Mixx3",
     author_email="mmiikkllee@yandex.ru",

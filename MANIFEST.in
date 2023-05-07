@@ -1,1 +1,1 @@
-include recognizer/data
+include recognizer/data/*.png
